@@ -13,6 +13,7 @@ I want to help you understand Bash Scribe as much as possible. I hope this progr
 5.off and on your Ethernet \
 5.Check Port(Fttp),GET MAC \
 6.Wifi Tool!Show Information interfaces and display a Attrib... \
+7.A log folder report!
 AND OTHER Soon....
 ## Hint
 I Writte a Simple Lang for Speed to use. \
