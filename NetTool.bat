@@ -109,13 +109,17 @@ echo                               ^| 5)Ping?                                   
 echo. 
 echo                               ^| 6)mac address                                            ^|
 echo. 
-echo                               ^| 7)Wlan(show Wirelless/Connect/Disconnect...)             ^|
+echo                               ^| 7)Wlan                                                   ^|
 echo.
 echo                               ^| 8)Choose _color_                                         ^|
-echo.
-echo                               ^| 9)About                                                  ^|
 echo. 
-echo                               ^| 10)exit                                                  ^|
+echo                               ^| 9)System information                                     ^|
+echo.
+echo                               ^| 10)all you need in folder log save it                    ^|
+echo.
+echo                               ^| 11)About                                                 ^|
+echo. 
+echo                               ^| 12)exit                                                  ^|
 echo.
 echo                              ---------------------------------------------------------------
 echo.
@@ -129,8 +133,10 @@ if /I "%C%" EQU "5" goto :ping
 if /I "%c%" EQU "6" goto :mac
 if /I "%c%" EQU "7" goto :wlan 
 if /I "%c%" EQU "8" goto :color
-if /I "%c%" EQU "9" goto :About
-if /I "%c%" EQU "10" goto exit
+IF /I "%c%" EQU "9" goto :information
+IF /I "%c%" EQU "10" goto :Log
+if /I "%c%" EQU "11" goto :About
+if /I "%c%" EQU "12" goto exit
                     echo "%c%" is not valid pls select 1 to 6 option!
 goto :main
 pause >NUL
@@ -329,9 +335,11 @@ echo                        ^|    6)show tracing                                
 echo.                       ^|                                                      ^|
 echo                        ^|    7)show wireless capabilities                      ^|
 echo.                       ^|                                                      ^|
-echo                        ^|    8)Password Creator (for wifi)                     ^|
-echo.                       ^|                                                      ^|  
-echo.                       ^|    9)Return to main menu                             ^|
+echo                        ^|    8)Save all Password Save in Log!                  ^|
+echo.                       ^|                                                      ^|
+echo                        ^|    9)Password Creator (for wifi)                     ^|
+echo                        ^|                                                      ^|                                          
+echo.                       ^|    10)Return to main menu                            ^|
 echo                 ^|--------------------------------------------------------------------^| 
 
 :mainWifi
@@ -342,9 +350,10 @@ if /I "%w%" EQU "3" goto :3
 if /I "%w%" EQU "4" goto :4
 if /I "%w%" EQU "5" goto :5
 if /I "%w%" EQU "6" goto :6
-if /I "%w%" EQU "7" goto :7 
+if /I "%w%" EQU "7" goto :7
 if /I "%w%" EQU "8" goto :8
 if /I "%w%" EQU "9" goto :9
+if /I "%w%" EQU "11" goto :10
                          echo "%w%" is not valid pls select 1 to 8 option!
 goto :main
 pause >NUL
@@ -424,6 +433,17 @@ cls
 goto :wlan
 
 :8
+cd Log\Wifi pass
+SET file0="wifi export.txt"
+echo ------------------------------------------------------>>%file0%
+netsh wlan export profile folder=. key=clear>>%file0%
+echo All Password wlan you connected it in Folder log wifi pass!
+netsh wlan export profile folder=. key=clear>>%file0%
+echo ------------------------------------------------------>>%file0%
+pause
+goto :main
+
+:9
 mode con cols=80 lines=20
 echo I will Added random pass with a Key(Char password and other pass you need..)
 echo pls say how many you need?(Type 1,5 or 10 and enter)
@@ -435,46 +455,136 @@ echo -----------------------------------
 echo and to back main wifi(press 0 and enter)
 set pass=
 set /p pass= Choice: 
-if %pass%==1 goto 8-1 if NOT goto wlan
-if %pass%==2 goto 8-2 if NOT goto wlan
-if %pass%==3 goto 8-3 if NOT goto wlan
-if %pass%==0 goto 8-0 if NOT goto wlan
-:8-1
+if %pass%==1 goto 9-1 if NOT goto wlan
+if %pass%==2 goto 9-2 if NOT goto wlan
+if %pass%==3 goto 9-3 if NOT goto wlan
+if %pass%==0 goto 9-0 if NOT goto wlan
+:9-1
 cls
 echo Here You Need!
 echo Your password is %random%
 pause
 goto :wlan
-:8-2
+:9-2
 cls
 echo Here You Need!
 echo Your 5 passwords are %random%, %random%, %random%, %random%, %random%.
 pause
 goto :wlan
-:8-3
+:9-3
 cls
 echo Here You Need!
 echo Your 10 Passwords are %random%, %random%, %random%, %random%, %random%, %random%, %random%, %random%, %random%, %random%
 goto :wlan
-:8-0
+:9-0
 cls
 echo ok!
 goto :wlan
 
-:9
+
+:11
 cls
 goto :main
 
 
 
 ::-------------------------------------------------------
-::Coming Soon...
+
+
+
+:information
+cls
+mode con cols=100 lines=80
+echo Here Your information
+echo ----------------------------------------------------
+systeminfo
+echo ----------------------------------------------------
+pause 
+goto :main
+
+
+
 ::-------------------------------------------------------
-::Coming Soon...
+
+
+::10)
+:Log
+cd Log\Wifi Information
+set file1="Ipconfig.txt"
+set file2="netsh.txt"
+set file3="Ip_Mac.txt"
+set file4="Connection and Ping.txt"
+cls
+
+echo Loading[##                  ](5%)
+echo ----------------------------------------->>%file1%
+echo The Log of NetTool>>%file1%
+echo Creator:mortza>>%file1%
+ipconfig>>%file1%
+echo ----------------------------------------->>%file1%
+ping localhost -n 2 >nul
+cls
+
+
+echo Loading[#####               ](20%)
+echo ----------------------------------------->>%file2%
+echo The Log of NetTool>>%file2%
+echo Creator:mortza>>%file2%
+netsh wlan show drivers>>%file2%
+netsh wlan show filters>>%file2%
+netsh wlan show network>>%file2%
+netsh wlan show interfaces>>%file2%
+netsh wlan show settings>>%file2%
+netsh wlan show Tracing>>%file2%
+netsh wlan show wirelesscapabilities>>%file2%
+echo ----------------------------------------->>%file2%
+ping localhost -n 2 >nul
+
+
+cls
+echo Loading[##########          ](50%)
+echo The Log of NetTool>>%file3%
+echo Creator:mortza>>%file3%
+echo -----------Here mac address device(%username%)------>>%file3%
+wmic nic get MACAddress,description>>%file3%
+GETMAC /S system /U user>>%file3%
+echo -----------Here ipaddress(%username%)--------------->>%file3%
+wmic nicconfig where ipenabled=true get ipaddress>>%file3%
+ipconfig /all>>%file3%
+ping localhost -n 2 >nul
+cls
+
+
+echo Loading[#############       ](70%)
+echo The Log of NetTool>>%file2%
+echo Creator:mortza>>%file2%
+echo ------------Connection device(%username%)------------>>%file4%
+ping -n www.google.com >>%file4%
+if not errorlevel 1 goto :noterror 
+if errorlevel 1 goto :error 
+:noerror 
+echo YES YOU HAVE NET! :)>>%file4%
+goto :main
+:error
+echo no you dont have net :/>>%file4%
+echo ------------Ping device(%username%)----------------->>%file4%
+ping  -n 10   8.8.8.8>>%file4%
+ping localhost -n 2 >nul
+
+cls
+echo Loading[###############     ](100%)
+echo Complate!
+ping localhost -n 2 >nul
+pause
+cls
+goto :main
+
+
+
 ::-------------------------------------------------------
 
 
-
+::9)
 ::Color Selector
 :color
 cls
@@ -534,7 +644,7 @@ goto :main
 
 
 
-::9)
+::11)
 ::About
 :About
 cls
@@ -561,4 +671,3 @@ goto :main
 
 
 ::-------------------------------------------------------
-          
