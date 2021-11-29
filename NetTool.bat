@@ -1,7 +1,7 @@
 ::Creator mortza
 ::Contact To me in discord( mortza#3700 )
 ::The Tool For Info or status net and ethernet
-::For Other Tool you need in( https://discord.gg/PASpgRWqSw )
+::For Other Tool you need in( BlackGuard Server! )
 @echo off
 ::-------------------------------------------------------
 
@@ -66,15 +66,11 @@ mode con cols=40lines=10
 color 0A
 echo.
 echo  What is your name?
+echo The name You Enter display in App. 
 echo.
 set /p name=">"
 cls
-echo.
-echo %name% is taken.
-echo Pls Enter a Key For Start Application.
-echo.
 set name=%name%
-pause 
 goto :main
 
 
@@ -86,43 +82,49 @@ goto :main
 ::main menu
 :main
 cls
-mode con cols=128 lines=35
+mode con cols=128 lines=50
+@echo off 
 echo                                     -------------------------------------------------      
 echo                                     ^|           ---- +-+-+-+-+-+-+-+ ----           ^|
 echo                                     ^|                   -NetTool-                   ^|
 echo                                     ^|           ---- +-+-+-+-+-+-+-+ ----           ^|
-echo                                     ^|                Welcome %name%!                ^|
+echo                                     ^|                 Welcome %name%!               ^|
 echo                                    -----------------------------------------------------      
 echo                                     ^|WHAT YOU NEED? Select it!(Press 1 to 10 option)^|    
 echo                                  ---------------------------------------------------------                                                   
 echo.                    
-echo                              ---------------------------------------------------------------
-echo                               ^| 1) IP_info                                               ^|
-echo.
-echo                               ^| 2) You Have net?                                         ^|
-echo.
-echo                               ^| 3) off/on your Enternet                                  ^|
-echo.
-echo                               ^| 4)Check port connection,And FtpProtocol                  ^|
-echo.
-echo                               ^| 5)Ping?                                                  ^|
-echo. 
-echo                               ^| 6)mac address                                            ^|
-echo. 
-echo                               ^| 7)Wlan                                                   ^|
-echo.
-echo                               ^| 8)Choose _color_                                         ^|
-echo. 
-echo                               ^| 9)System information                                     ^|
-echo.
-echo                               ^| 10)all you need in folder log save it                    ^|
-echo.
-echo                               ^| 11)About                                                 ^|
-echo. 
-echo                               ^| 12)exit                                                  ^|
-echo.
-echo                              ---------------------------------------------------------------
-echo.
+echo       +--------------------------------------------------------------------------------------------------------+      
+echo             +       ^|       ^| 1) IP_info                                                     ^|         +
+echo.           +       ^|                                                                          ^|        +
+echo             +       ^|       ^| 2) You Have net?                                               ^|          +
+echo.           +       ^|                                                                          ^|        +
+echo             +       ^|       ^| 3) off/on your Enternet                                        ^|          +
+echo.           +       ^|                                                                          ^|        +
+echo             +       ^|       ^| 4)Check port connection,And FtpProtocol                        ^|          +
+echo.           +       ^|                                                                          ^|        +
+echo             +       ^|       ^| 5)Ping?                                                        ^|          +
+echo.           +       ^|                                                                          ^|        +
+echo             +       ^|       ^| 6)mac address                                                  ^|          +
+echo.           +       ^|                                                                          ^|        +
+echo             +       ^|       ^| 7)Wlan                                                         ^|          +
+echo.           +       ^|                                                                          ^|        +
+echo             +       ^|       ^| 8)Choose _color_                                               ^|          +
+echo.           +       ^|                                                                          ^|        +
+echo             +       ^|       ^| 9)Disable and Enable Firewall                                  ^|          +
+echo.           +       ^|                                                                          ^|        + 
+echo             +       ^|       ^| 10)System information                                          ^|          +
+echo.           +       ^|                                                                          ^|        +
+echo             +       ^|       ^| 11)Report All information in Log(Log folder in source)         ^|          +
+echo.           +      ^|                                                                           ^|        +
+echo             +       ^|       ^| 12)Help                                                        ^|          +
+echo.           +       ^|                                                                          ^|        +
+echo             +       ^|       ^| 13)About                                                       ^|          +
+echo.           +       ^|                                                                          ^|        +
+echo             +       ^|       ^| 14)exit                                                        ^|          +
+echo.           +       ^|                                                                          ^|        +
+echo           +--------------------------------------------------------------------------------------------------+
+echo.                                                                                                 
+
 
                                 set /p c=Select option:
 if /I "%c%" EQU "1" goto :IP_info
@@ -133,10 +135,12 @@ if /I "%C%" EQU "5" goto :ping
 if /I "%c%" EQU "6" goto :mac
 if /I "%c%" EQU "7" goto :wlan 
 if /I "%c%" EQU "8" goto :color
-IF /I "%c%" EQU "9" goto :information
-IF /I "%c%" EQU "10" goto :Log
-if /I "%c%" EQU "11" goto :About
-if /I "%c%" EQU "12" goto exit
+If /I "%c%" EQU "9" goto :DisEnB
+if /I "%c%" EQU "10" goto :information
+If /I "%c%" EQU "11" goto :Log
+if /I "%c%" EQU "12" goto :Help
+if /I "%c%" EQU "13" goto :About
+if /I "%c%" EQU "14" goto exit
                     echo "%c%" is not valid pls select 1 to 6 option!
 goto :main
 pause >NUL
@@ -153,7 +157,7 @@ pause >NUL
 :IP_info
 cls
 mode con cols=100 lines=150
-echo OK! here information your IP %username% :)
+echo OK! here information %name% device IP %username% :)
 wmic nicconfig where ipenabled=true get ipaddress
 echo.
 and Other information Help you...
@@ -314,6 +318,7 @@ goto :main
 :wlan
 cls
 mode con cols=115 lines=35
+color 0A
 echo                                     ^|---- +-+-+-+-+-+-+-+ ----^|
 echo                                    ^|      -    Wlan    -       ^|
 echo                                     ^|---- +-+-+-+-+-+-+-+ ----^|
@@ -436,6 +441,9 @@ goto :wlan
 cd Log\Wifi pass
 SET file0="wifi export.txt"
 echo ------------------------------------------------------>>%file0%
+echo The Log of NetTool>>%file1%
+echo Creator:mortza>>%file1%
+echo wifi visit %name%>>%file1%
 netsh wlan export profile folder=. key=clear>>%file0%
 echo All Password wlan you connected it in Folder log wifi pass!
 netsh wlan export profile folder=. key=clear>>%file0%
@@ -491,7 +499,7 @@ goto :main
 ::-------------------------------------------------------
 
 
-
+::10
 :information
 cls
 mode con cols=100 lines=80
@@ -507,13 +515,14 @@ goto :main
 ::-------------------------------------------------------
 
 
-::10)
+::11)
 :Log
-cd Log\Wifi Information
+cd Log\Information
 set file1="Ipconfig.txt"
 set file2="netsh.txt"
 set file3="Ip_Mac.txt"
 set file4="Connection and Ping.txt"
+set file5="System Information.txt"
 cls
 
 echo Loading[##                  ](5%)
@@ -572,12 +581,69 @@ ping  -n 10   8.8.8.8>>%file4%
 ping localhost -n 2 >nul
 
 cls
-echo Loading[###############     ](100%)
-echo Complate!
+echo Loading[###############     ](90%)
+echo The Log of NetTool>>%file5%
+echo Creator:mortza>>%file5%
+echo ---------------System info(name:%username%)--------------->> %file5%.txt
+wmic bios get serialnumber /format:list | more >> %file5%.txt | more
+wmic computersystem get systemskunumber /format:list | more >> %file5%.txt | more
+wmic path softwarelicensingservice get OA3xOriginalProductKey /format:list | more >> %file5%.txt | more
+wmic netlogin get name /format:list | more >> %file5%.txt | more
+wmic computersystem get model,name,manufacturer,systemtype /format:list | more  >> %file5%.txt | more
+wmic cpu get name /format:list | more  >> %file5%.txt | more 
+wmic memorychip get capacity /format:list | more  >> %file5%.txt | more 
+wmic os get name /format:list | more  >> %file5%.txt | more
+wmic os get "serialnumber" /format:list | more  >> %file5%.txt | more
+wmic nicconfig where ipenabled=true get ipaddress,macaddress,description /format:list | more  >> %file5%.txt | more 
+wmic product get name, version  | more  >> %file5%.txt | more
+wmic net use get name | more  >> %file5%.txt | more
+wmic logicaldisk get caption,description,drivetype,providername,volumename,size,freespace | more >> %file5%.txt | more
+echo Printers:  >> %file5%.txt
+wmic printer get name /value | more >> %file5%txt 
+echo The Log of NetTool>>%file5%
+echo Creator:mortza>>%file5%
 ping localhost -n 2 >nul
+cls
+echo Loading[####################](100%)
+echo Complate!
+echo You Can visit Your information! 
+echo your information in Folder(Log\information)
 pause
 cls
 goto :main
+
+
+
+::-------------------------------------------------------
+
+
+
+::Win10 Firewall Disabler
+:DisEnB
+cls
+echo       Disable or Enable Firewall.
+echo.
+echo            1)Disable Firewall.
+echo.
+echo               2)Enable Firewall.
+echo.
+echo                   3)Return menu.
+echo.
+   set /p cl=Type the letter(s): 
+ if /I "%Fire%" EQU "1" goto :DisableF
+ if /I "%Fire%" EQU "2" goto :EnableF 
+ if /I "%Fire%" EQU "3" goto :main
+
+:DisableF
+cls 
+net stop "Windows Firewall
+echo Successfull!
+goto :DisEnB
+:EnableF 
+cls
+net start "Windows Firewall
+echo Successfull!
+goto :DisEnB
 
 
 
@@ -649,6 +715,7 @@ goto :main
 :About
 cls
 mode con cols=70 lines=25
+color 04
 echo                      +-+-+-+-=^|NetTool^|=-+-+-+-+
 echo                   -^|         -=-=--=-=-         ^|-     
 echo            ^|--------------------------------------------^|
