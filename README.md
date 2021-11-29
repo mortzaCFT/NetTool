@@ -6,14 +6,23 @@ Those who intend to migrate from Windows to Linux, regardless of any opinion, mu
 I want to help you understand Bash Scribe as much as possible. I hope this program can help you get started faster. 
 
 ## Feature
-1.Has Main menu for help  you in learning \
-2.ip_info \
-3.Display your ip(With host you can change the host)
-4.check connection,Wlan Controol \
-5.off and on your Ethernet \
-5.Check Port(Fttp),GET MAC \
-6.Wifi Tool!Show Information interfaces and display a Attrib... \
-7.A log folder report!
+
+1. Has Main menu for help  you in learning 
+
+2. ip_info 
+
+3. Display your ip(With host you can change the host)
+
+4. check connection,Wlan Controol 
+
+5. off and on your Ethernet 
+
+6. Check Port(Fttp),GET MAC 
+
+7. Wifi Tool!Show Information interfaces and display a Attrib... 
+
+8. Disable or On your FireWall Vary simple! Just Two Key need to enter! 
+
 AND OTHER Soon....
 ## Hint
 I Writte a Simple Lang for Speed to use. \
