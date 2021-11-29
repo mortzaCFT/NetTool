@@ -28,7 +28,8 @@ AND OTHER Soon....
 I Writte a Simple Lang for Speed to use. \
 This is Writte in Batch Script and only run in cmd(CLI Windows) \
 I Converted This script To ".EXE" you can Run with exe. \
-This Tool safe and simple for learning Lang...
+This Tool safe and simple for learning Lang... \
+All .Exe file NetTool in (Old\exe)
 ## Comming Soon....
 Color char coming soon.... \
 bruteforce Wifi interface Coming soon... \
