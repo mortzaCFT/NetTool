@@ -708,6 +708,41 @@ goto :main
 
 ::-------------------------------------------------------
 
+:Help
+cls
+echo -=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+echo.
+echo Hi My Brother!(Or Sister XD)
+echo.
+echo -=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+echo.
+echo Here Tool Help you in internet managering and Learning CMD!
+echo.
+echo -=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+echo.
+echo This is simple and vary easy for you.Just Seleceting what you need!
+echo For Example you need Disable Firewall fast.
+echo Type in menu( 9 ) and press Enter 
+echo you transfer menu Disable Firewall! Vary easy Yes?
+echo -=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+echo.
+echo Other Tool you need here.
+echo if you programer and need source code This is vary simple for learning BatchScript
+echo But dont forgot(Developer:mortza!)
+echo.
+echo -=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+echo.
+echo If you need be informarion Faster Just enter number(11)!
+echo The Log Paste in Folder Log!
+echo.
+echo -=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+pause
+cls
+goto :main
+
+
+::-------------------------------------------------------
+
 
 
 ::11)
@@ -715,7 +750,6 @@ goto :main
 :About
 cls
 mode con cols=70 lines=25
-color 04
 echo                      +-+-+-+-=^|NetTool^|=-+-+-+-+
 echo                   -^|         -=-=--=-=-         ^|-     
 echo            ^|--------------------------------------------^|
@@ -729,7 +763,8 @@ echo.
 echo        -+-My Page Githup:https://github.com/mortzaLootTool-+-
 echo.
 echo       -+-Discord For Other Toolhttps://discord.gg/PASpgRWqSw-+-
-echo.  
+echo.
+echo                 -=-********************************-=-                      
 echo        ^|----------------------------------------------------^|
 echo.
 pause 
