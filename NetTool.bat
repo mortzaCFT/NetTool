@@ -116,7 +116,7 @@ echo             +       ^|       ^| 10)System information                      
 echo.           +       ^|                                                                          ^|        +
 echo             +       ^|       ^| 11)Report All information in Log(Log folder in source)         ^|          +
 echo.           +       ^|                                                                          ^|        +
-echo             +       ^|       ^| 12)••YouTub Downloader!••                                      ^|          +
+echo             +       ^|       ^| 12)••Download Manager! ••                                      ^|          +
 echo.                   ^|                                                                          ^|        +
 echo             +       ^|       ^| 13)Help                                                        ^|          +
 echo.           +       ^|                                                                          ^|        +
@@ -655,7 +655,9 @@ goto :DisEnB
 
 
 :YtDownLoAD 
-
+echo Comeing Soom...
+pause
+goto :main
 
 
 ::-------------------------------------------------------
@@ -785,3 +787,4 @@ goto :main
 
 
 ::-------------------------------------------------------
+
