@@ -33,6 +33,7 @@ All .Exe file NetTool in (Old\exe)
 ## Comming Soon....
 Color char coming soon.... \
 bruteforce Wifi interface Coming soon... \
+Download Manager Coming Soon!... \
 Long Update Coming soon.............
 ## Creator
 developer and Desing "mortza" \
