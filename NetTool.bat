@@ -1,8 +1,7 @@
-::Creator mortza
-::Contact To me in discord( mortza#3700 )
-::The Tool For Info or status net and ethernet
-::For Other Tool you need in( BlackGuard Server! )
 @echo off
+::This Code Write By mortza.
+::All Humen Need TO read The Lincese For Using This Source Code.
+::I Here...
 ::-------------------------------------------------------
 
 
@@ -12,7 +11,7 @@
 title NetTool
 color 0A
 set allowed_char_list="ABCDEFGHIJKLMNOPRSTUVYZWXQabcdefghijklmnoprstuvyzwxq0123456789-_"
-
+set /a attempt=1
 
 
 ::-------------------------------------------------------
@@ -28,9 +27,7 @@ set allowed_char_list="ABCDEFGHIJKLMNOPRSTUVYZWXQabcdefghijklmnoprstuvyzwxq01234
 
 :Permissions
 
-REM  --> Check for permissions
 >nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
-REM --> If error flag set, we do not have admin.
 if '%errorlevel%' NEQ '0' (
 echo.
 echo   Requesting Administrative ...
@@ -39,17 +36,12 @@ echo.
 
     goto UACPrompt
 ) else ( goto gotAdmin )
-
 :UACPrompt
-
     echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
     echo UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
-
     "%temp%\getadmin.vbs"
     exit /B
-
 :gotAdmin
-
     if exist "%temp%\getadmin.vbs" ( del "%temp%\getadmin.vbs" )
     pushd "%CD%"
     CD /D "%~dp0"
@@ -64,6 +56,7 @@ echo.
 :GetName
 mode con cols=40lines=10
 color 0A
+echo %username% your pc name...
 echo.
 echo  What is your name?
 echo The name You Enter display in App. 
@@ -100,7 +93,7 @@ echo             +       ^|       ^| 2) You Have net?                           
 echo.           +       ^|                                                                          ^|        +
 echo             +       ^|       ^| 3) off/on your Enternet                                        ^|          +
 echo.           +       ^|                                                                          ^|        +
-echo             +       ^|       ^| 4)Check port connection,And FtpProtocol                        ^|          +
+echo             +       ^|       ^| 4)Check port connection,And FtpProtocol(Close The Danger Port) ^|          +
 echo.           +       ^|                                                                          ^|        +
 echo             +       ^|       ^| 5)Ping?                                                        ^|          +
 echo.           +       ^|                                                                          ^|        +
@@ -118,7 +111,7 @@ echo             +       ^|       ^| 11)Report All information in Log(Log folder
 echo.           +       ^|                                                                          ^|        +
 echo             +       ^|       ^| 12)••Download Manager! ••                                      ^|          +
 echo.                   ^|                                                                          ^|        +
-echo             +       ^|       ^| 13)Help                                                        ^|          +
+echo             +       ^|       ^| 13)Help                                                        ^|          + 
 echo.           +       ^|                                                                          ^|        +
 echo             +       ^|       ^| 14)About                                                       ^|          +
 echo.           +       ^|                                                                          ^|        +
@@ -246,13 +239,199 @@ goto :main
 ::show Protocol and state,PID
 :CheckPort
 cls
+echo   -----------------------
+echo      What You need?
+echo.
+echo  1) Showing Tcp or Ftp port status.
+echo.
+echo   2) Close The "Danger-Port"
+echo.
+echo    3) Return to main. 
+echo.         
+echo    ----------------------
+set /p Prot= Select:
+if '%Prot%' == '1' goto :1-4
+if '%Prot%' == '2' goto :2-4
+if '%Prot%' == '3' goto :3-4
+echo "%Prot%" is not a valid option. Please, try again. 
+:1-4
+cls
 mode con cols=100 lines=80
-echo please wait ...
 netstat -ano
 tasklist|findstr "9999"
 pause 
-goto :main
+goto :CheckPort
 
+:2-4
+cls
+echo     --Creator mortza--
+echo Select one port to close it...
+echo  1) Port  " 110 "
+echo  2) Port  " 135 "
+echo  3) Port  " 139 "
+echo  4) Port  " 143 "
+echo  5) Port  " 220 "
+echo  6) Port  " 2390"
+echo  7) Port  "  24 "
+echo  8) Port  "  25 "
+echo  9) Port  " 455 "
+echo 10) Port  " 446 "
+echo 11) Port  " 587 "
+echo 12) Port  " 993 "
+echo 13) Port  " 994 "
+echo 14) Port  " 995 "
+echo 15) Port  " 585 "
+echo.
+echo.
+echo 16) --All Port--
+echo.
+set /p P01= Select:
+if '%P01%' == '1'  goto :P1
+if '%P01%' == '2'  goto :P2
+if '%P01%' == '3'  goto :P3
+if '%P01%' == '4'  goto :P4
+if '%P01%' == '5'  goto :P5
+if '%P01%' == '6'  goto :P6
+if '%P01%' == '7'  goto :P7
+if '%P01%' == '8'  goto :P8
+if '%P01%' == '9'  goto :P9
+if '%P01%' == '10' goto :P10
+if '%P01%' == '11' goto :P11
+if '%P01%' == '12' goto :P12
+if '%P01%' == '13' goto :P13
+if '%P01%' == '14' goto :P14
+if '%P01%' == '15' goto :P15
+if '%P01%' == '16' goto :P16
+echo "%P01%" is not a valid option. Please, try again. 
+echo.
+
+:P1
+netsh firewall delete portopening protocol = TCP port =110
+echo Successfull!
+pause 
+goto :CheckPort
+
+:P2
+netsh firewall delete portopening protocol = TCP port =135
+echo Successfull!
+pause 
+goto :CheckPort
+
+:P3
+netsh firewall delete portopening protocol = TCP port =139
+echo Successfull!
+pause 
+goto :CheckPort
+
+:P4
+netsh firewall delete portopening protocol = TCP port =143
+echo Successfull!
+pause 
+goto :CheckPort
+
+:P5
+netsh firewall delete portopening protocol = TCP port =220
+echo Successfull!
+pause 
+goto :CheckPort
+
+:P6
+netsh firewall delete portopening protocol = TCP port =2390
+echo Successfull!
+pause 
+goto :CheckPort
+
+:P7
+netsh firewall delete portopening protocol = TCP port =24
+echo Successfull!
+pause 
+goto :CheckPort
+
+:P8
+netsh firewall delete portopening protocol = TCP port =25
+echo Successfull!
+pause 
+goto :CheckPort
+
+:P9
+netsh firewall delete portopening protocol = TCP port =455
+echo Successfull!
+pause 
+goto :CheckPort
+
+:P10
+netsh firewall delete portopening protocol = TCP port =446
+echo Successfull!
+pause 
+goto :CheckPort
+
+:P11
+netsh firewall delete portopening protocol = TCP port =587
+echo Successfull!
+pause 
+goto :CheckPort
+
+:P12
+netsh firewall delete portopening protocol = TCP port =993
+echo Successfull!
+pause 
+goto :CheckPort
+
+:P13
+netsh firewall delete portopening protocol = TCP port =994
+echo Successfull!
+pause 
+goto :CheckPort
+
+:P14
+netsh firewall delete portopening protocol = TCP port =955
+echo Successfull!
+pause 
+goto :CheckPort
+
+:P15
+netsh firewall delete portopening protocol = TCP port =585
+echo Successfull!
+pause 
+goto :CheckPort
+
+:P16
+netsh firewall delete portopening protocol = TCP port =110
+
+netsh firewall delete portopening protocol = TCP port =135
+
+netsh firewall delete portopening protocol = TCP port =139
+
+netsh firewall delete portopening protocol = TCP port =143
+
+netsh firewall delete portopening protocol = TCP port =220
+
+netsh firewall delete portopening protocol = TCP port =2390
+
+netsh firewall delete portopening protocol = TCP port =24
+
+netsh firewall delete portopening protocol = TCP port =25
+
+netsh firewall delete portopening protocol = TCP port =455
+
+netsh firewall delete portopening protocol = TCP port =446
+
+netsh firewall delete portopening protocol = TCP port =587
+
+netsh firewall delete portopening protocol = TCP port =993
+
+netsh firewall delete portopening protocol = TCP port =994
+
+netsh firewall delete portopening protocol = TCP port =955
+
+netsh firewall delete portopening protocol = TCP port =585
+
+echo Successfull!
+pause 
+goto :CheckPort
+
+:3-4
+goto :main
 
 
 ::-------------------------------------------------------
@@ -635,7 +814,7 @@ echo.
    set /p cl=Type the letter(s): 
  if /I "%Fire%" EQU "1" goto :DisableF
  if /I "%Fire%" EQU "2" goto :EnableF 
- if /I "%Fire%" EQU "3" goto :main
+ if /I "%Fire%" EQU "3" goto :returnF
 
 :DisableF
 cls 
@@ -647,7 +826,9 @@ cls
 net start "Windows Firewall
 echo Successfull!
 goto :DisEnB
-
+:returnF
+cls 
+goto :main
 
 
 ::-------------------------------------------------------
@@ -746,7 +927,7 @@ echo But dont forgot(Developer:mortza!)
 echo.
 echo -=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 echo.
-echo If you need be informarion Faster Just enter number(11)!
+echo If you need be informarion PC Faster Just enter number(11)!
 echo The Log Paste in Folder Log!
 echo.
 echo -=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -769,14 +950,10 @@ echo                   -^|         -=-=--=-=-         ^|-
 echo            ^|--------------------------------------------^|
 echo                         ********************
 echo                  -+-    developer: +mortza+    -+-    
-echo.                                                                                                  
-echo                -+-  ServerDiscord: .BlackGuard.  -+-      
 echo.                                                     
 echo             -+- Contact To me In Discord(mortza#3700) -+-
 echo.                                                   
 echo        -+-My Page Githup:https://github.com/mortzaLootTool-+-
-echo.
-echo       -+-Discord For Other Toolhttps://discord.gg/PASpgRWqSw-+-
 echo.
 echo                 -=-********************************-=-                      
 echo        ^|----------------------------------------------------^|
@@ -787,4 +964,3 @@ goto :main
 
 
 ::-------------------------------------------------------
-
