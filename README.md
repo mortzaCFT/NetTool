@@ -23,7 +23,11 @@ I want to help you understand Bash Scribe as much as possible. I hope this progr
 
 8. Disable or On your FireWall Vary simple! Just Two Key need to enter! 
 
-AND OTHER Soon....
+9.Downloader!
+
+10.System File Check
+
+AND OTHER ....
 ## Hint
 I Writte a Simple Lang for Speed to use. \
 This is Writte in Batch Script and only run in cmd(CLI Windows) \
