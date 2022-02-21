@@ -1,29 +1,24 @@
+::In Name Of Allah
 @echo off
-::This Code Write By mortza.
-::All Humen Need TO read The Lincese For Using This Source Code.
-::I Here...
+::Write By mortza
+::The Tool Can Help you for leaning cmd and Commend line(Cli platforming...)
+::I dont have reson to write this just only i like teaching in this way i write this...
+::All Humen Need To read The Lincese For Using This Source Code. 
 ::-------------------------------------------------------
 
 
 
 ::Home
+::Default...
 :Home
 title NetTool
-color 0A
-set allowed_char_list="ABCDEFGHIJKLMNOPRSTUVYZWXQabcdefghijklmnoprstuvyzwxq0123456789-_"
+set Color=%Color%
+set valid_char_list="ABCDEFGHIJKLMNOPRSTUVYZWXQabcdefghijklmnoprstuvyzwxq0123456789"
+set Ver="2.7"
 set /a attempt=1
 
 
 ::-------------------------------------------------------
-
-
-
-::Coming Soon...
-
-
-
-::-------------------------------------------------------
-
 
 :Permissions
 
@@ -35,7 +30,7 @@ echo   Press YES in UAC Prompt to Continue
 echo.
 
     goto UACPrompt
-) else ( goto gotAdmin )
+) else ( goto gotAdmin ) 
 :UACPrompt
     echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
     echo UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
@@ -45,6 +40,128 @@ echo.
     if exist "%temp%\getadmin.vbs" ( del "%temp%\getadmin.vbs" )
     pushd "%CD%"
     CD /D "%~dp0"
+    
+
+
+
+::-------------------------------------------------------
+
+
+
+:Progress 
+echo Hi There!
+echo Check Security System....
+echo This nothing.....
+echo Loading...
+echo ---------------------------------------_---
+echo                                    ^|  _0_ ^|
+echo ---------------------------------------_---
+echo Checking Windows Ver....
+echo Cheking Permissions....
+echo Checking File Permissions
+echo ....
+ping localhost -n 2 >nul
+cls
+echo Loading...
+echo ---------------------------------------_---
+echo ##                                 ^|  _5_ ^|
+echo ---------------------------------------_---
+echo Checking Your System....
+echo ....
+ping localhost -n 1 >nul
+cls
+echo Loading...
+echo ---------------------------------------_---
+echo ####                               ^|  _15_ ^|
+echo ---------------------------------------_---
+ping localhost -n 1 >nul
+cls
+echo Loading...
+echo ---------------------------------------_---
+echo ########                           ^|  _30_ ^|
+echo ---------------------------------------_---
+ping localhost -n 2 >nul
+cls
+echo Loading...
+echo ---------------------------------------_---
+echo ##########                         ^|  _42_ ^|
+echo ---------------------------------------_---
+ping localhost -n 1 >nul
+cls
+echo Loading...
+echo ---------------------------------------_---
+echo ############                       ^|  _45_ ^|
+echo ---------------------------------------_---
+ping localhost -n 1 >nul
+cls
+echo Loading...
+echo ---------------------------------------_---
+echo ##############                     ^|  _47_ ^|
+echo ---------------------------------------_---
+ping localhost -n 1 >nul
+cls
+echo Loading...
+echo ---------------------------------------_---
+echo ################                   ^|  _50_ ^|
+echo ---------------------------------------_---
+ping localhost -n 2 >nul
+cls
+echo Loading...
+echo ---------------------------------------_---
+echo ##################                 ^|  _52_ ^|
+echo ---------------------------------------_---
+ping localhost -n 1 >nul
+cls
+echo Loading...
+echo ---------------------------------------_---
+echo ####################               ^|  _56_ ^|
+echo ---------------------------------------_---
+ping localhost -n 1 >nul
+cls
+echo Loading...
+echo ---------------------------------------_---
+echo ######################             ^|  _60_ ^|
+echo ---------------------------------------_---
+ping localhost -n 2 >nul
+cls
+echo Loading...
+echo ---------------------------------------_---
+echo ##########################         ^|  _70_ ^|
+echo ---------------------------------------_---
+ping localhost -n 1 >nul
+cls
+echo Loading...
+echo ---------------------------------------_---
+echo ############################       ^|  _80_ ^|
+echo ---------------------------------------_---
+ping localhost -n 1 >nul
+cls
+echo Loading...
+echo ---------------------------------------_---
+echo ##############################     ^|  _89_ ^|
+echo ---------------------------------------_---
+ping localhost -n 1 >nul
+cls
+echo Loading...
+echo ---------------------------------------_---
+echo ###############################    ^|  _90_ ^|
+echo ---------------------------------------_---
+cls
+echo Loading...
+echo ---------------------------------------_---
+echo ###############################    ^|  _95_ ^|
+echo ---------------------------------------_---
+ping localhost -n 1 >nul
+cls
+echo Loading Complete...
+echo All Ok!
+echo ---------------------------------------_---
+echo ################################ ^|  -_100_- ^|
+echo ---------------------------------------_---
+echo.
+
+goto :GetName
+
 
 
 
@@ -55,7 +172,6 @@ echo.
 ::Get Name
 :GetName
 mode con cols=40lines=10
-color 0A
 echo %username% your pc name...
 echo.
 echo  What is your name?
@@ -77,6 +193,7 @@ goto :main
 cls
 mode con cols=128 lines=50
 @echo off 
+title NetTool
 echo                                     -------------------------------------------------      
 echo                                     ^|           ---- +-+-+-+-+-+-+-+ ----           ^|
 echo                                     ^|                   -NetTool-                   ^|
@@ -87,11 +204,11 @@ echo                                     ^|WHAT YOU NEED? Select it!(Press 1 to 
 echo                                  ---------------------------------------------------------                                                   
 echo.                    
 echo       +--------------------------------------------------------------------------------------------------------+      
-echo             +       ^|       ^| 1) IP_info                                                     ^|         +
+echo             +       ^|       ^| 1)IP_info                                                      ^|         +
 echo.           +       ^|                                                                          ^|        +
-echo             +       ^|       ^| 2) You Have net?                                               ^|          +
+echo             +       ^|       ^| 2)You Have net?                                                ^|          +
 echo.           +       ^|                                                                          ^|        +
-echo             +       ^|       ^| 3) off/on your Enternet                                        ^|          +
+echo             +       ^|       ^| 3)off/on your Enternet                                         ^|          +
 echo.           +       ^|                                                                          ^|        +
 echo             +       ^|       ^| 4)Check port connection,And FtpProtocol(Close The Danger Port) ^|          +
 echo.           +       ^|                                                                          ^|        +
@@ -109,13 +226,15 @@ echo             +       ^|       ^| 10)System information                      
 echo.           +       ^|                                                                          ^|        +
 echo             +       ^|       ^| 11)Report All information in Log(Log folder in source)         ^|          +
 echo.           +       ^|                                                                          ^|        +
-echo             +       ^|       ^| 12)••Download Manager! ••                                      ^|          +
-echo.                   ^|                                                                          ^|        +
+echo             +       ^|       ^| 12)Download Manager!                                   ^|           +
+echo.           *       ^|                                                                          ^|        +
 echo             +       ^|       ^| 13)Help                                                        ^|          + 
 echo.           +       ^|                                                                          ^|        +
 echo             +       ^|       ^| 14)About                                                       ^|          +
 echo.           +       ^|                                                                          ^|        +
-echo             +       ^|       ^| 15)exit                                                        ^|          +
+echo             *       ^|       ^| 15)Checking Your System File                                   ^|          *
+echo.           *       ^|                                                                          ^|        *  
+echo             +       ^|       ^| 16)exit                                                        ^|          +
 echo.           +       ^|                                                                          ^|          +
 echo           +--------------------------------------------------------------------------------------------------+
 echo.                                                                                                 
@@ -136,8 +255,9 @@ If /I "%c%" EQU "11" goto :Log
 if /I "%c%" EQU "12" goto :YtDownLoAD 
 if /I "%c%" EQU "13" goto :Help
 if /I "%c%" EQU "14" goto :About
-if /I "%c%" EQU "15" goto exit
-                    echo "%c%" is not valid pls select 1 to 6 option!
+if /I "%c%" EQU "15" goto :sysChk
+if /I "%c%" EQU "16" goto exit 
+                    echo "%c%" is not valid pls select 1 to 16 option!
 goto :main
 pause >NUL
 
@@ -153,7 +273,7 @@ pause >NUL
 :IP_info
 cls
 mode con cols=100 lines=150
-echo OK! here information %name% device IP %username% :)
+echo OK!here information %name%: device IP:%username% :
 wmic nicconfig where ipenabled=true get ipaddress
 echo.
 and Other information Help you...
@@ -178,11 +298,11 @@ if not errorlevel 1 goto :noterror
 if errorlevel 1 goto :error 
  
 :noerror 
-echo YES YOU HAVE NET! :)
+echo  YOU HAVE NET! :)
 pause
 goto :main
 :error
-echo no you dont have net :/
+echo  you dont have net :(
 pause
 goto :main
 
@@ -266,21 +386,21 @@ goto :CheckPort
 cls
 echo     --Creator mortza--
 echo Select one port to close it...
-echo  1) Port  " 110 "
-echo  2) Port  " 135 "
-echo  3) Port  " 139 "
-echo  4) Port  " 143 "
-echo  5) Port  " 220 "
-echo  6) Port  " 2390"
-echo  7) Port  "  24 "
-echo  8) Port  "  25 "
-echo  9) Port  " 455 "
-echo 10) Port  " 446 "
-echo 11) Port  " 587 "
-echo 12) Port  " 993 "
-echo 13) Port  " 994 "
-echo 14) Port  " 995 "
-echo 15) Port  " 585 "
+echo  1) Port  " 110  "
+echo  2) Port  " 135  "
+echo  3) Port  " 139  "
+echo  4) Port  " 143  "
+echo  5) Port  " 220  "
+echo  6) Port  " 2390 "
+echo  7) Port  "  24  "
+echo  8) Port  "  25  "
+echo  9) Port  " 455  "
+echo 10) Port  " 446  "
+echo 11) Port  " 587  "
+echo 12) Port  " 993  "
+echo 13) Port  " 994  "
+echo 14) Port  " 995  "
+echo 15) Port  " 585  "
 echo.
 echo.
 echo 16) --All Port--
@@ -500,10 +620,9 @@ goto :main
 :wlan
 cls
 mode con cols=115 lines=35
-color 0A
-echo                                     ^|---- +-+-+-+-+-+-+-+ ----^|
-echo                                    ^|      -    Wlan    -       ^|
-echo                                     ^|---- +-+-+-+-+-+-+-+ ----^|
+echo                                     ^|----+-+-+-+-+-+-+-+----^|
+echo                                    ^|      -    Wlan    -     ^|
+echo                                     ^|----+-+-+-+-+-+-+-+----^|
 echo.
 echo                      --------------------------------------------------------------
 echo                        ^|                *What you need?*                      ^|
@@ -541,7 +660,7 @@ if /I "%w%" EQU "7" goto :7
 if /I "%w%" EQU "8" goto :8
 if /I "%w%" EQU "9" goto :9
 if /I "%w%" EQU "11" goto :10
-                         echo "%w%" is not valid pls select 1 to 8 option!
+                         echo "%w%" is not valid pls select 1 to 10 option!
 goto :main
 pause >NUL
 
@@ -630,6 +749,7 @@ netsh wlan export profile folder=. key=clear>>%file0%
 echo All Password wlan you connected it in Folder log wifi pass!
 netsh wlan export profile folder=. key=clear>>%file0%
 echo ------------------------------------------------------>>%file0%
+echo The Password Wifi Saved in The log Folder(wifiexport.txt)
 pause
 goto :main
 
@@ -649,6 +769,7 @@ if %pass%==1 goto 9-1 if NOT goto wlan
 if %pass%==2 goto 9-2 if NOT goto wlan
 if %pass%==3 goto 9-3 if NOT goto wlan
 if %pass%==0 goto 9-0 if NOT goto wlan
+echo "%pass%" is not valid pls select 1 to 3 option!
 :9-1
 cls
 echo Here You Need!
@@ -665,6 +786,7 @@ goto :wlan
 cls
 echo Here You Need!
 echo Your 10 Passwords are %random%, %random%, %random%, %random%, %random%, %random%, %random%, %random%, %random%, %random%
+pause
 goto :wlan
 :9-0
 cls
@@ -764,26 +886,26 @@ ping localhost -n 2 >nul
 
 cls
 echo Loading[###############     ](90%)
-echo The Log of NetTool>>%file5%
-echo Creator:mortza>>%file5%
-echo ---------------System info(name:%username%)--------------->> %file5%.txt
-wmic bios get serialnumber /format:list | more >> %file5%.txt | more
-wmic computersystem get systemskunumber /format:list | more >> %file5%.txt | more
-wmic path softwarelicensingservice get OA3xOriginalProductKey /format:list | more >> %file5%.txt | more
-wmic netlogin get name /format:list | more >> %file5%.txt | more
-wmic computersystem get model,name,manufacturer,systemtype /format:list | more  >> %file5%.txt | more
-wmic cpu get name /format:list | more  >> %file5%.txt | more 
-wmic memorychip get capacity /format:list | more  >> %file5%.txt | more 
-wmic os get name /format:list | more  >> %file5%.txt | more
-wmic os get "serialnumber" /format:list | more  >> %file5%.txt | more
-wmic nicconfig where ipenabled=true get ipaddress,macaddress,description /format:list | more  >> %file5%.txt | more 
-wmic product get name, version  | more  >> %file5%.txt | more
-wmic net use get name | more  >> %file5%.txt | more
-wmic logicaldisk get caption,description,drivetype,providername,volumename,size,freespace | more >> %file5%.txt | more
+echo The Log of NetTool>>%file5%.txt 
+echo Creator:mortza>>%file5%.txt 
+echo ---------------System info(name:%username%)---------------| more >> %file5%.txt
+wmic bios get serialnumber /format:list | more >> %file5%.txt 
+wmic computersystem get systemskunumber /format:list | more >> %file5%.txt 
+wmic path softwarelicensingservice get OA3xOriginalProductKey /format:list | more >> %file5%.txt 
+wmic netlogin get name /format:list | more >> %file5%.txt 
+wmic computersystem get model,name,manufacturer,systemtype /format:list | more  >> %file5%.txt 
+wmic cpu get name /format:list | more  >> %file5%.txt 
+wmic memorychip get capacity /format:list | more  >> %file5%.txt  
+wmic os get name /format:list | more  >> %file5%.txt 
+wmic os get "serialnumber" /format:list | more  >> %file5%.txt 
+wmic nicconfig where ipenabled=true get ipaddress,macaddress,description /format:list | more  >> %file5%.txt 
+wmic product get name, version  | more  >> %file5%.txt 
+wmic net use get name | more  >> %file5%.txt 
+wmic logicaldisk get caption,description,drivetype,providername,volumename,size,freespace | more >> %file5%.txt 
 echo Printers:  >> %file5%.txt
-wmic printer get name /value | more >> %file5%txt 
-echo The Log of NetTool>>%file5%
-echo Creator:mortza>>%file5%
+wmic printer get name /value | more >> %file5%.txt 
+echo The Log of NetTool | more >>%file5%.txt 
+echo Creator:mortza | more >>%file5%.txt 
 ping localhost -n 2 >nul
 cls
 echo Loading[####################](100%)
@@ -811,10 +933,11 @@ echo               2)Enable Firewall.
 echo.
 echo                   3)Return menu.
 echo.
-   set /p cl=Type the letter(s): 
- if /I "%Fire%" EQU "1" goto :DisableF
- if /I "%Fire%" EQU "2" goto :EnableF 
- if /I "%Fire%" EQU "3" goto :returnF
+   set /p fair=Select: 
+ if /I "%fair%" EQU "1" goto :DisableF
+ if /I "%fair%" EQU "2" goto :EnableF 
+ if /I "%fair%" EQU "3" goto :returnF
+echo "%fair%" is not valid pls select 1 to 10 option!
 
 :DisableF
 cls 
@@ -835,10 +958,109 @@ goto :main
 
 
 
-:YtDownLoAD 
-echo Comeing Soom...
-pause
-goto :main
+:YtDownLoAD                                                               
+cls                             
+echo the Download Path :
+       cd   
+echo                                                            -----/--\-----
+echo  ^|---------------==/-\==-----------------------------^|----------^|---^|^_{  --  ----   ---
+echo. ^|                                                  ^|---------- ^|---^|--={   ---  --
+echo  ^|    What you need for download:                  ^|----------  ^|---^|-={  --- -- ----
+echo  ^|"The Tool Use The other Program To download.."  ^|----------   ^|---^|
+echo  ^|                                               ^|----------    ^|---^|
+echo  ^|     1 : Video Downloader                     ^|----------     ^|---^|
+echo  ^|      2 : File Downloader                    ^|----------      ^|---^|
+echo  ^|       3 : Help                             ^|----------       ^|---^|
+echo  ^|        4 : return To main menu            ^|----------        ^|---^|
+echo. ^|                                          ^|----------         ^|^_^_^_^|^_^_^|
+echo  ^|--------------==/-\==--------------------^|                 --------------------------
+echo.
+
+set /p Dow=Select:
+ if  '%Dow%' ==  '1'   goto :Vd1
+ if  '%Dow%' ==  '2'   goto :Fd2
+ if  '%Dow%' ==  '3'   goto :Hd3
+ if  '%Dow%' ==  '4'   goto :main
+echo "%Dow%" is not valid pls select 1 to 4 option!
+
+:Vd1
+ cls
+ echo  ---------------------------------------------------------
+ echo     To Donwload we Need Other Program To download(NVDD)
+ echo ----------------------------------------------------------
+ echo.
+ echo -------------------------
+ echo  Enter Url For download :
+ echo -------------------------
+   set /p down=">"
+   set down=%down%
+ NVDD.exe -u %down% 
+ pause 
+ goto :YtDownLoAD
+
+:Fd2
+ cls
+ echo -----------------^|^_^|----------------------------------------------------
+ echo .File Downloader.  
+ echo -----------------^|^_^|----------------------------------------------------
+ echo NOTE:The Feature Only For Win10 build 17063 and later!
+ echo.
+ echo enter a number:
+ echo.
+ echo 1)download file 
+ echo 2)Download File With Using HTTP NTLM authentication
+ echo 3)come back to menu.
+ 
+set /p Fd=Select:
+ if  '%Fd%' ==  '1'   goto :FdS1
+ if  '%Fd%' ==  '2'   goto :FdS2
+ if  '%Fd%' ==  '3'   goto :main
+
+:FdS1
+echo download file.
+echo --------------------------------
+echo Pls Enter Url link for download:
+echo --------------------------------
+      set /p FldUr=">"
+   set FldUr=%FldUr%
+  curl.exe -O -# %FldUr%
+  pause
+  goto :YtDownLoAD  
+
+:FdS2
+ echo  Using     HTTP. 
+ echo --------------------------------
+ echo Pls Enter URL link for download:
+ echo --------------------------------
+ echo.
+    set /p FldUr=">"
+  set FldUr=%FldUr%
+ curl.exe -O  -# --ntlm %FldUr%
+  goto :YtDownLoAD   
+    
+
+
+
+
+:Hd3 
+ cls
+ echo ..............
+ echo. 
+ echo This simple 
+ echo Just Enter What You file and download 
+ echo I will add proxy!
+ echo in this i used the Go program To download Video Becuse fast and stable....
+ echo "Note": Pls Dont Remove NVDD this not HURT you pc but if you remove it this not working...
+ echo one thing you can using only The NVDD This Simple For Learning just say NVDD.exe in cmd and take effect :)
+ echo.
+ echo NOTE: This Just For Learning!                           Not Full Feature!
+ echo.
+ echo ...............
+ pause 
+ goto :YtDownLoAD
+
+
+
 
 
 ::-------------------------------------------------------
@@ -857,16 +1079,19 @@ echo Red
 echo Purple
 echo Gold
 echo White
+echo Optional(Backlight)(Enter: BL)
+echo Oprional(BackBlack)(Enter: BK)
 echo.
 :clMain
-set /p cl=Type the letter(s): 
+set /p cl=Type the letter: 
 if /I "%cl%" EQU "b" goto :b
 if /I "%cl%" EQU "a" goto :a
 if /I "%cl%" EQU "r" goto :r
 if /I "%cl%" EQU "p" goto :p
 if /I "%cl%" EQU "g" goto :g
 if /I "%cl%" EQU "w" goto :w
-if /I "%cl%" EQU "home" goto :main
+if /I "%cl%" EQU "bl" goto :bl 
+if /I "%cl%" EQU "bk" goto :bk
 echo "%cl%" is invalid please try again!
 goto :clMain
 
@@ -894,6 +1119,15 @@ goto :main
 cls
 color 7
 goto :main
+
+:bl 
+cls 
+color f0
+goto :main
+
+:bk
+cls
+color 0f
 
 :home
 goto :main
@@ -935,6 +1169,22 @@ pause
 cls
 goto :main
 
+::-------------------------------------------------------
+
+
+
+:sysChk
+SET error=%ERRORLEVEL%
+echo in progress.....
+echo ....
+SET error=%ERRORLEVEL%
+IF %error% EQU 0 EXIT
+IF %error% EQU 2 EXIT
+SFC /SCANNOW
+
+pause 
+goto :main
+
 
 ::-------------------------------------------------------
 
@@ -949,12 +1199,13 @@ echo                      +-+-+-+-=^|NetTool^|=-+-+-+-+
 echo                   -^|         -=-=--=-=-         ^|-     
 echo            ^|--------------------------------------------^|
 echo                         ********************
-echo                  -+-    developer: +mortza+    -+-    
-echo.                                                     
-echo             -+- Contact To me In Discord(mortza#3700) -+-
-echo.                                                   
-echo        -+-My Page Githup:https://github.com/mortzaLootTool-+-
-echo.
+echo               -+-       developer: +mortza+           -+-    
+echo.            -+-           Version: %Ver%                -+-
+echo           -+-                                             -+-
+echo         -+-  Thanks For Using This!(I happy you use this :) -+-
+echo       -+-        Contact To me In Discord(mortza#3700)        -+-
+echo.    -+-                                                         -+-
+echo    -+-       My Page Githup:https://github.com/mortzaLootTool     -+-
 echo                 -=-********************************-=-                      
 echo        ^|----------------------------------------------------^|
 echo.
