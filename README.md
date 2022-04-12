@@ -1,5 +1,5 @@
 # NetToolCmd
-## The Simple or Practical SoftWare
+## The Simple and Practical SoftWare
 A program under the Windows command line (called CMD) that can help speed things up (according to a program under the command line).
 It is also open source to help you with basic coding of any language or any language under line commands.  
 Those who intend to migrate from Windows to Linux, regardless of any opinion, must have a minimum knowledge of CMD. 
