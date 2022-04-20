@@ -7,25 +7,23 @@ I want to help you understand Bash Scribe as much as possible. I hope this progr
 
 ## Feature
 
-1. Has Main menu for help  you in learning 
+1. ip_info 
 
-2. ip_info 
+2. Display your ip(With host you can change the host)
 
-3. Display your ip(With host you can change the host)
+3. check connection,Wlan Controol 
 
-4. check connection,Wlan Controol 
+4. off and on your Ethernet 
 
-5. off and on your Ethernet 
+5. Check Port(Fttp),GET MAC 
 
-6. Check Port(Fttp),GET MAC 
+6. Wifi Tool!Show Information interfaces and display a Attrib... 
 
-7. Wifi Tool!Show Information interfaces and display a Attrib... 
+7. Disable or On your FireWall Vary simple! Just Two Key need to enter! 
 
-8. Disable or On your FireWall Vary simple! Just Two Key need to enter! 
+8.Downloader!
 
-9.Downloader!
-
-10.System File Check
+9.System File Check
 
 AND OTHER ....
 ## Hint
