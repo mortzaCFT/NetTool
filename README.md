@@ -36,5 +36,5 @@ All .Exe file NetTool in (Old\exe)
 Color char coming soon.... \
 ## Creator
 (mortza#3700) \
-JUST FOR TAINING BATCH=SCRIPT :)
+JUST FOR TRAINING BATCH=SCRIPT :)
 
