@@ -35,8 +35,6 @@ All .Exe file NetTool in (Old\exe)
 ## Comming Soon....
 Color char coming soon.... \
 ## Creator
-developer and Desing "mortza" \
-Tell me on Discord(mortza#3700) \
-join server Discord for help you in project or help you in Learning cmd,Terminal,Hacking,Python.... \
-and other tool,that awaits you! \
-See Soon..
+(mortza#3700) \
+JUST FOR TAINING BATCH=SCRIPT :)
+
